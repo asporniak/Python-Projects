@@ -1,15 +1,18 @@
 import matplotlib.pyplot as plt
+import numpy as np
 
 
 months = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"]
 
 user_amounts = []
-maxlengthamounts = 10
+maxlengthamounts = 12
 while len(user_amounts) < maxlengthamounts:
-    monthspending = input("Please enter your monthly amount of spending. Ensure you hit enter after each month for the values to be recorded. Enter amount: ")
+    monthspending = input("Please enter your monthly spending for " + months[len(user_amounts)] + ":")
     user_amounts.append(monthspending)
 
-plt.plot(months, user_amounts, color = "blue", marker = "o")
+user_amounts = np.array(user_amounts)
+
+plt.plot(months, user_amounts, linewidth = 2, marker = "o")
 plt.title("Monthly Spending Graph")
 plt.xlabel("Months")
 plt.ylabel("Dollar Amount")
