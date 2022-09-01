@@ -10,7 +10,7 @@ while len(user_amounts) < maxlengthamounts:
     monthspending = input("Please enter your monthly spending for " + months[len(user_amounts)] + ":")
     user_amounts.append(monthspending)
 
-user_amounts = np.array(user_amounts)
+user_amounts = [int(item) for item in user_amounts]
 
 plt.plot(months, user_amounts, linewidth = 2, marker = "o")
 plt.title("Monthly Spending Graph")
